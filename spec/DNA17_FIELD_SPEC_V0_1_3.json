@@ -1,0 +1,315 @@
+{
+  "document_id": "NOVA_Q_EIT_DNA17_FIELD_SPEC_V0_1_3",
+  "document_date": "2026-10-31",
+  "builds_on": [
+    "NOVA_Q_EIT_DNA17_DYNAMIC_TOPOLOGY_BINDING_DRAFT_V0_1 (field registry, read-only)",
+    "DNA17_FIELD_SPEC_V0_1, V0_1_1_DELTA, V0_1_2_DELTA (see history/VERSION_HISTORY.md)"
+  ],
+  "prepared_by": "Claude (builder / methodology auditor role)",
+  "author_concept": "Toni Mladenovski",
+  "status": [
+    "RELEASE_CANDIDATE",
+    "NOT_FROZEN",
+    "DECISIONS_D1_D7_RATIFIED_BY_AUTHOR_2026-10-31",
+    "INDEPENDENT_VERIFICATION_PENDING"
+  ],
+  "claim_boundary": {
+    "claim_domain": "SOFTWARE",
+    "physical_claim": false,
+    "units": "All numeric fields are DIMENSIONLESS_SYMBOLIC. Impedance and capacity are NOT ohms or farads; energy is NOT joules. Any physical unit binding requires a new version and a PHYSICAL claim split. Integers anywhere in a numeric field must lie within +-(2**53-1) (D6).",
+    "not_claimed": [
+      "physical DNA recording",
+      "optical holography",
+      "measured spectra",
+      "consciousness",
+      "new energy law"
+    ],
+    "fail_closed_scope": "No uncaught exception and no out-of-domain acceptance for JSON-like inputs. Not claimed: Python objects with custom __eq__/__hash__/__float__, recursion-depth attacks, memory exhaustion."
+  },
+  "key_convention": {
+    "rule": "Canonical record keys are the field LABELS (e.g. INTERNAL_HARMONY), never the short symbols.",
+    "reason": "Short symbols collide with established notation: H_i vs H-Space, Re_i vs Reynolds number (NS channel), E_i vs E_links_i / electric field, O_i vs oxygen, Z_i vs atomic number, C_i vs color. Author symbols are kept for display only and are not renamed."
+  },
+  "layers": {
+    "IDENTITY_META": [
+      "VOXEL_UNIT",
+      "PROVENANCE_CONFIDENCE",
+      "INFORMATION_IDENTITY"
+    ],
+    "STATE": [
+      "SPECTRAL_MEMORY",
+      "ENERGY_DYNAMICS",
+      "SPECTRAL_FIELD",
+      "TRANSFER_IMPEDANCE",
+      "VOXEL_CAPACITY",
+      "INNER_FORCE_VECTOR",
+      "RESONANT_HARMONIC",
+      "DIMENSIONAL_INDEX",
+      "CYCLIC_INDEX",
+      "ORBITAL_PATH",
+      "BIO_HOLOGRAPHIC_VOXEL_VECTOR",
+      "INTERNAL_HARMONY",
+      "SPATIAL_TRANSLATION"
+    ],
+    "DYNAMICS": [
+      "DYNAMIC_TOPOLOGICAL_STRUCTURE"
+    ]
+  },
+  "record_semantics": "A DNA17 record is a typed RECORD (product type), not a vector in R^17. No norm, distance, sum or scalar multiple of whole records is defined in V0.1.",
+  "fields": [
+    {
+      "position": 1,
+      "symbol": "1",
+      "key": "VOXEL_UNIT",
+      "layer": "IDENTITY_META",
+      "temporal": "STATIC",
+      "proposed_type": "integer literal",
+      "domain": "exactly 1",
+      "decision": "D1"
+    },
+    {
+      "position": 2,
+      "symbol": "M_i",
+      "key": "SPECTRAL_MEMORY",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "array<number>",
+      "domain": "finite, >= 0; length 0..4096",
+      "memory_rule": "D7: append-only under a protected transition (existing entries and Chemical_Ref fixed; Color_Projection derived and free); every change reported"
+    },
+    {
+      "position": 3,
+      "symbol": "E_i",
+      "key": "ENERGY_DYNAMICS",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "number",
+      "domain": "finite, >= 0"
+    },
+    {
+      "position": 4,
+      "symbol": "Sigma_i",
+      "key": "SPECTRAL_FIELD",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "object{Chemical_Ref: string|null, Spectral_Signature: array<number>, Color_Projection: [r,g,b]}",
+      "domain": "Chemical_Ref non-empty string or null; Spectral_Signature finite >= 0; r,g,b in [0,1]",
+      "note": "Not linked to measured spectra in V0.1.",
+      "memory_rule": "D7: append-only under a protected transition (existing entries and Chemical_Ref fixed; Color_Projection derived and free); every change reported"
+    },
+    {
+      "position": 5,
+      "symbol": "Z_i",
+      "key": "TRANSFER_IMPEDANCE",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "number",
+      "domain": "finite, >= 0 (dimensionless)"
+    },
+    {
+      "position": 6,
+      "symbol": "C_i",
+      "key": "VOXEL_CAPACITY",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "number",
+      "domain": "finite, > 0 (dimensionless)"
+    },
+    {
+      "position": 7,
+      "symbol": "F_i",
+      "key": "INNER_FORCE_VECTOR",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "[number, number, number]",
+      "domain": "finite"
+    },
+    {
+      "position": 8,
+      "symbol": "Rh_i",
+      "key": "RESONANT_HARMONIC",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "number",
+      "domain": "[0, 1] alignment score"
+    },
+    {
+      "position": 9,
+      "symbol": "D_i",
+      "key": "DIMENSIONAL_INDEX",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "integer",
+      "domain": "{3, 5}; 11 reserved (E_RESERVED_PROFILE) for a separately versioned EIT_11D profile",
+      "decision": "D2"
+    },
+    {
+      "position": 10,
+      "symbol": "Re_i",
+      "key": "CYCLIC_INDEX",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "object{phase: number, cycle_count: integer}",
+      "domain": "phase in [0,1); cycle_count integer in 0..2**53-1",
+      "note": "Encodes the author's cycle (birth, life, death, new cycle) as phase within cycle plus number of completed cycles."
+    },
+    {
+      "position": 11,
+      "symbol": "O_i",
+      "key": "ORBITAL_PATH",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "array<[number, number, number]>",
+      "domain": ">= 2 finite points"
+    },
+    {
+      "position": 12,
+      "symbol": "Vb_i",
+      "key": "BIO_HOLOGRAPHIC_VOXEL_VECTOR",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "array<voxel_id string>",
+      "domain": "references must resolve to voxels in the same network; no self-reference; no duplicates"
+    },
+    {
+      "position": 13,
+      "symbol": "P_i",
+      "key": "PROVENANCE_CONFIDENCE",
+      "layer": "IDENTITY_META",
+      "temporal": "APPEND_ONLY_BY_REVIEW",
+      "proposed_type": "object{source: string, confidence: number, source_sha256?: hex64}",
+      "domain": "source non-empty; confidence in [0,1]",
+      "rule": "Never modified by tau. Only an explicit review action may change it."
+    },
+    {
+      "position": 14,
+      "symbol": "T_i(t)",
+      "key": "DYNAMIC_TOPOLOGICAL_STRUCTURE",
+      "layer": "DYNAMICS",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "object{t: number, neighbors: array<voxel_id>, links: array<{target: voxel_id, weight: number}>, tau: {operator_id: string, version: string, memory_preserving: boolean}}",
+      "domain": "neighbors resolve, unique, no self; every link target is a neighbor; weight finite >= 0; all voxels in one snapshot share the same t; at most one link per target; identifiers without control characters or edge whitespace",
+      "tau_signature": "tau_i : V_i(t) x {V_j(t) : j in N_i(t)} -> V_i(t + dt)",
+      "note": "tau is a REFERENCE to a registered operator, never embedded executable code. Not reduced to static RELATIONS.",
+      "profiles": {
+        "symmetry": {
+          "default": "DIRECTED_ALLOWED",
+          "alternative": "SYMMETRIC_REQUIRED",
+          "decision": "D3"
+        },
+        "edge_contract": {
+          "default": "N_EQUALS_LINK_TARGETS",
+          "compatibility": "LINKS_SUBSET_OF_N",
+          "decision": "D4"
+        },
+        "tau_policy": {
+          "default": "BEFORE_GOVERNS",
+          "strict": "EITHER_PRESERVING_PROTECTS",
+          "decision": "D5"
+        }
+      }
+    },
+    {
+      "position": 15,
+      "symbol": "H_i",
+      "key": "INTERNAL_HARMONY",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "number",
+      "domain": "[0, 1] stability index"
+    },
+    {
+      "position": 16,
+      "symbol": "X_i",
+      "key": "SPATIAL_TRANSLATION",
+      "layer": "STATE",
+      "temporal": "TIME_VARYING",
+      "proposed_type": "[number, number, number]",
+      "domain": "finite (symbolic 3D sphere coordinates)"
+    },
+    {
+      "position": 17,
+      "symbol": "I_i",
+      "key": "INFORMATION_IDENTITY",
+      "layer": "IDENTITY_META",
+      "temporal": "STATIC_UNLESS_NON_PRESERVING",
+      "proposed_type": "object{voxel_id: string, payload: string, payload_sha256: hex64}",
+      "domain": "voxel_id non-empty, unique in network; payload_sha256 must equal SHA-256 of UTF-8 payload (script-computed, never hand-typed); payload is free text, strict UTF-8"
+    }
+  ],
+  "invariants": {
+    "INV_1_KEYS": "Record has exactly the 17 keys; unknown keys rejected (fail-closed).",
+    "INV_2_IDS": "voxel_id unique across the network.",
+    "INV_3_REFS": "All neighbor, link and bio-holographic references resolve.",
+    "INV_4_TIME": "All T_i in one snapshot share the same t.",
+    "INV_5_PAYLOAD_HASH": "payload_sha256 == sha256(payload).",
+    "INV_6_IDENTITY_STABLE": "Across any transition: voxel_id and VOXEL_UNIT never change; voxels are not silently added or removed.",
+    "INV_7_P_M": "P_M(G(t+1)) = P_M(G(t)) under a protected transition: INFORMATION_IDENTITY unchanged (C6, D5) and spectral history append-only (D7).",
+    "INV_8_PROVENANCE": "PROVENANCE_CONFIDENCE unchanged across a tau transition.",
+    "INV_9_TIME_ORDER": "t(after) > t(before).",
+    "P_T_NOTE": "Topological shape (neighbors, links) MAY change; no invariant imposed on P_T in V0.1.",
+    "INV_10_TAU_SEMANTICS": "tau declared at t(before) produced t(after); declaration changes reported as W_TAU_DECLARATION_CHANGED (C6).",
+    "INV_11_NOTHING_SILENT": "Every identity rewrite or spectral change is either an error or a warning."
+  },
+  "not_in_scope": [
+    "H-Space V0.4 binding",
+    "information_key derivation",
+    "canonical binary serializer",
+    "GF(2) A_code",
+    "executing tau",
+    "Kimi implementation (separate)"
+  ],
+  "governance": {
+    "F2_AUDIT": "OPEN",
+    "H01": "NOT_COVERED",
+    "DNA_TRACE": "OPEN",
+    "V277": "HOLD",
+    "GATE_4": "NOT_SATISFIED",
+    "FORMAL_FREEZE": "NO",
+    "ZENODO": "HOLD"
+  },
+  "schema_version": "0.1.3",
+  "envelope": {
+    "keys": [
+      "schema_id",
+      "schema_version",
+      "voxels"
+    ],
+    "schema_id": "NOVA_Q_EIT_DNA17_FIELD_SPEC_V0_1_3",
+    "schema_version": "0.1.3",
+    "rule": "D1: the schema version lives in the snapshot envelope; unknown versions are rejected. VOXEL_UNIT stays literal 1."
+  },
+  "error_codes": [
+    "E_ASYMMETRIC",
+    "E_DUPLICATE",
+    "E_DUPLICATE_ID",
+    "E_DUPLICATE_LINK",
+    "E_HASH_FORMAT",
+    "E_IDENTITY_SET_CHANGED",
+    "E_IDENT_FORMAT",
+    "E_LINK_NOT_NEIGHBOR",
+    "E_MISSING",
+    "E_NEIGHBOR_WITHOUT_LINK",
+    "E_PAYLOAD_HASH",
+    "E_PROVENANCE_CHANGED",
+    "E_P_M_VIOLATION",
+    "E_RANGE",
+    "E_RESERVED_PROFILE",
+    "E_SCHEMA",
+    "E_SELF_REFERENCE",
+    "E_SPECTRAL_HISTORY_REWRITTEN",
+    "E_TIME_MISMATCH",
+    "E_TIME_ORDER",
+    "E_TYPE",
+    "E_UNKNOWN_KEY",
+    "E_UNRESOLVED_REF",
+    "E_UTF8"
+  ],
+  "warning_codes": [
+    "W_ASYMMETRIC",
+    "W_IDENTITY_REWRITTEN",
+    "W_SPECTRAL_APPENDED",
+    "W_SPECTRAL_CHANGED",
+    "W_TAU_DECLARATION_CHANGED"
+  ]
+}

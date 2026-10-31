@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "NOVA Q / EIT — DNA17 Voxel Validator"
+version: "0.1.3"
+type: software
+authors:
+  - family-names: "Mladenovski"
+    given-names: "Toni"
+    orcid: "https://orcid.org/0009-0009-8343-662X"
+    affiliation: "EITNetworks LLC (Independent Researcher)"
+license: PolyForm-Noncommercial-1.0.0
+repository-code: "https://github.com/eit-orbitos/nova-q-eit-dna17-voxel"
+abstract: >-
+  Typed data model and fail-closed validator for the DNA17 voxel: a 17-field record
+  with a mandatory dynamic topological structure (neighbors, links and a local
+  transition operator), auditable state transitions, and append-only spectral
+  memory under memory-preserving transitions. Software claim only; all values are
+  dimensionless symbolic quantities.
+keywords:
+  - NOVA Q
+  - EIT
+  - DNA17
+  - voxel
+  - dynamic topology
+  - data validation
+  - AI memory architecture
