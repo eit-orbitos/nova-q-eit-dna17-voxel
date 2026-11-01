@@ -11,7 +11,10 @@
 | Replay of V0.1.1 | reviewer ZIP | `ef268f6597e6940eea89c1042dd9fd68614aecb672ce88a1e56bd21f243d73d1` | reported by reviewer, not received |
 | V0.1.2 correction | DNA17_FIELD_SPEC_V0_1_2_CORRECTION_CANDIDATE.zip | `d4bf32be6a05397b29002f883eacff64bd41fc69e445fcb4199ffa2cd5b016f4` | yes |
 | Replay of V0.1.2 (PASS_WITH_NOTES) | reviewer ZIP | `127670b57a81721aebe94dc58bbe25324b93269a9de182e75f64ab34b2a04536` | reported by reviewer, not received |
-| V0.1.3 release candidate | this repository | see `MANIFEST.sha256` | — |
+| V0.1.3 release candidate | tag `v0.1.3-rc1`, commit `f22bff5` | see `MANIFEST.sha256` | yes |
+| Review 2 (Kimi), PASS | `DNA17_V013_RC1_НЕЗАВИСНА_РЕВИЗИЈА_KIMI.md` | MD5 `598cf80b7b21d5629d16013b8eeac7a1` | yes (file received; GitHub zipball SHA-256 `ccc00460…` re-checked: manifest 21/21, identical to builder tree) |
+| V0.1.3 final | GitHub release `v0.1.3`, same commit `f22bff5` | — | yes |
+| Zenodo record | DOI `10.5281/zenodo.23847202` (concept `10.5281/zenodo.23847201`) | file MD5s listed on the record | record checked via the author's screenshots; landing page not fetched directly |
 
 ## Review findings and where they were closed
 | Finding | Source | Closed in |
@@ -27,6 +30,10 @@
 | R5 τ semantics | replay V0.1.1 | C6 (V0.1.2), D5 (V0.1.3) |
 | control chars, unbounded counter | builder fuzz | C7, C8 (V0.1.2) |
 | S01 P_M spectral scope | replay V0.1.2 | D7 (V0.1.3) |
+| Signed ZIP not a release asset | Kimi review 2 | attached to release v0.1.3 and Zenodo |
+| `immutable: false` | Kimi review 2 | open (optional platform setting) |
+| `checkout@v4` / `setup-python@v5` | Kimi review 2 | post-release CI update |
+| CITATION version vs `-rc1` tag | Kimi review 2 | final tag `v0.1.3` matches |
 | baseline manifests list files not carried | replay V0.1.2 | baselines replaced by this hash table |
 
 Common-mode note: F01 and F03 occurred in both independent implementations (this one and Kimi's).
