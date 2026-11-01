@@ -8,10 +8,10 @@
   "prepared_by": "Claude (builder / methodology auditor role)",
   "author_concept": "Toni Mladenovski",
   "status": [
-    "RELEASE_CANDIDATE",
+    "RELEASED_V0_1_3",
     "NOT_FROZEN",
     "DECISIONS_D1_D7_RATIFIED_BY_AUTHOR_2026-10-31",
-    "INDEPENDENT_VERIFICATION_PENDING"
+    "INDEPENDENT_REVIEW_2_PASS"
   ],
   "claim_boundary": {
     "claim_domain": "SOFTWARE",
@@ -311,5 +311,16 @@
     "W_SPECTRAL_APPENDED",
     "W_SPECTRAL_CHANGED",
     "W_TAU_DECLARATION_CHANGED"
-  ]
+  ],
+  "publication": {
+    "github_release": "https://github.com/eit-orbitos/nova-q-eit-dna17-voxel/releases/tag/v0.1.3",
+    "commit": "f22bff5b3a44a7c1e0dd53c9beed15c235b6e498",
+    "version_doi": "10.5281/zenodo.23847202",
+    "concept_doi": "10.5281/zenodo.23847201",
+    "signed_zip_sha256": "df2a20d85f8f441fd06160bd33deef54d72acecce7a3b3d6b4b88ec8dbcae532",
+    "reviews": [
+      "review 1: PASS_WITH_NOTES (V0.1.2, closed)",
+      "review 2 (Kimi, 2026-11-01): PASS"
+    ]
+  }
 }
